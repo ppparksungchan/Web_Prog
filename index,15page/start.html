@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인 페이지</title>
+  <style>
+    body {
+      background-color: white;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .login-container {
+      width: 300px;
+      margin: auto;
+      padding: 20px;
+      background-color: white;
+      border: 1px solid white;
+      border-radius: 8px;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: blue;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>로그인</h2>
+    <div class="input-group">
+      <label for="userId">ID:</label>
+      <input type="text" id="userId">
+    </div>
+    <div class="input-group">
+      <label for="password">비밀번호:</label>
+      <input type="password" id="password">
+    </div>
+    <button onclick="login()">로그인</button>
+    <p id="errorMessage" class="error-message"></p>
+  </div>
+
+  <script>
+    function login() {
+      const userId = document.getElementById("userId").value;
+      const password = document.getElementById("password").value;
+      const errorMessage = document.getElementById("errorMessage");
+
+      if (userId === "" || password === "") {
+        errorMessage.textContent = "ID와 비밀번호를 모두 입력해주세요.";
+        return;
+      }
+
+      // ID admin PW 1234
+      if (userId === "admin" && password === "1234") {
+        alert("로그인 성공!");
+        window.location.href = "page9.html"; // 다음 페이지로 이동
+      } else {
+        errorMessage.textContent = "ID 또는 비밀번호가 잘못되었습니다.";
+      }
+    }
+  </script>
+</body>
+</html>

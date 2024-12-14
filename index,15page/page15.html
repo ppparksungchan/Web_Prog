@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 일기장</title>
+    <style>
+        body {
+            background-color: white;
+            margin: 20px;
+            color: black;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid white;
+            text-align: left;
+        }
+
+        textarea, input {
+            width: 100%;
+            padding: 8px;
+           
+        }
+      
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>나의 일기</h1>
+        <p>날짜: <input id="date" clatype="text" placeholder="YYYY MM DD 요일">
+            날씨: <select id="weather">
+            <option value="맑음">맑음</option>
+            <option value="흐림">흐림</option>
+            <option value="비">비</option>
+            <option value="눈">눈</option>
+            </select></p>
+
+        <h2>오늘의 기록</h2>
+        <table>
+            <tr>
+                <td>방문한 장소</td>
+                <td><textarea id="visitedPlace" placeholder="방문한 장소"></textarea></td>
+            </tr>
+            <tr>
+                <td>오늘 만난 사람</td>
+                <td><textarea id="metPerson" placeholder="오늘 만난 사람"></textarea></td>
+            </tr>
+            <tr>
+                <td>구입한 물건</td>
+                <td><textarea id="Item" placeholder="구입한 물건"></textarea></td>
+            </tr>
+            <tr>
+                <td>지출 금액</td>
+                <td><input type="number" id="expense" placeholder="지출 금액 (원)"></td>
+            </tr>
+        </table>
+
+        <h2>오늘의 뉴스</h2>
+        <textarea id="todayNews" rows="3" placeholder="오늘의 뉴스를 입력하세요"></textarea>
+
+        <h2>내일 계획</h2>
+        <textarea id="tomorrowPlan" rows="3" placeholder="내일의 계획을 입력하세요"></textarea>
+
+        <div>
+            <button onclick="saveData()">저장하기</button>
+            <button onclick="loadData()">불러오기</button>
+        </div>
+
+   
+
+    <script>
+       // 저장하기 함수
+function saveData() {
+    const enteredDate = document.querySelector('#date').value;
+    const enteredWeather = document.querySelector('#weather').value;
+
+            // 다른 웹에서 저장된 날짜와 날씨 가져오기
+    const savedDate = localStorage.getItem('date');
+    const savedWeather = localStorage.getItem('weather');
+
+            // 날짜와 날씨 비교
+    if (savedDate && savedWeather) {
+        if (enteredDate !== savedDate || enteredWeather !== savedWeather) {
+            alert('날짜와 시간이 일치하지 않습니다!');
+            return; // 저장을 중단하고 함수 종료
+        }
+    }
+    // querySelector를 사용해 각 필드의 값을 localStorage에 저장    setItem() - key, value 추가
+    localStorage.setItem('date', document.querySelector('#date').value);
+    localStorage.setItem('weather', document.querySelector('#weather').value);
+    localStorage.setItem('visitedPlace', document.querySelector('#visitedPlace').value);
+    localStorage.setItem('metPerson', document.querySelector('#metPerson').value);
+    localStorage.setItem('Item', document.querySelector('#Item').value);
+    localStorage.setItem('expense', document.querySelector('#expense').value);
+    localStorage.setItem('todayNews', document.querySelector('#todayNews').value);
+    localStorage.setItem('tomorrowPlan', document.querySelector('#tomorrowPlan').value);
+
+    alert('일기가 저장되었습니다!');
+}
+
+// 불러오기 함수
+function loadData() {
+    // querySelector를 사용해 각 필드에 저장된 값을 불러오기    getItem() - value 읽어 오기
+    document.querySelector('#date').value = localStorage.getItem('date') || '';
+    document.querySelector('#weather').value = localStorage.getItem('weather') || '맑음';
+    document.querySelector('#visitedPlace').value = localStorage.getItem('visitedPlace') || '';
+    document.querySelector('#metPerson').value = localStorage.getItem('metPerson') || '';
+    document.querySelector('#Item').value = localStorage.getItem('Item') || '';
+    document.querySelector('#expense').value = localStorage.getItem('expense') || '';
+    document.querySelector('#todayNews').value = localStorage.getItem('todayNews') || '';
+    document.querySelector('#tomorrowPlan').value = localStorage.getItem('tomorrowPlan') || '';
+
+    alert('일기가 불러와졌습니다!');
+}
+
+
+    </script>
+</body>
+</html>
