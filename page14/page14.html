@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변비에 좋은 식품</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+        }
+        #image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 1px;
+            justify-items: center;
+            padding: 20px;
+            border: 2px solid black;
+            width: 30%;
+            margin: 20px auto;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .highlight {
+            border: 5px solid red;
+            border-radius: 50%;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>변비에 좋은 식품 기억하기</h1>
+    </header>
+    <main>
+        <p>앞서 기억해 둔 변비에 좋은 식품을 찾아 선택하세요.</p>
+        <div id="image-grid">
+            <div id="커피">
+                <img src="커피.JPG" alt="커피">
+            </div>
+            <div id="키위">
+                <img src="키위.JPG" alt="키위">
+            </div>
+            <div id="자두">
+                <img src="자두.JPG" alt="자두">
+            </div>
+            <div id="팥">
+                <img src="팥.JPG" alt="팥">
+            </div>
+            <div id="빵">
+                <img src="빵.JPG" alt="빵">
+            </div>
+            <div id="양배추">
+                <img src="양배추.JPG" alt="양배추">
+            </div>
+            <div id="현미">
+                <img src="현미.JPG" alt="현미">
+            </div>
+            <div id="삼겹살">
+                <img src="삼겹살.JPG" alt="삼겹살">
+            </div>
+            <div id="치킨">
+                <img src="치킨.JPG" alt="치킨">
+            </div>
+            <div id="오이">
+                <img src="오이.JPG" alt="오이">
+            </div>
+        </div>
+        <div style="text-align: center">
+        <button id = "NextPage" style="margin-top: 20px; padding: 10px 30px ; background-color: #4CAF50; color: white; border: none; cursor: pointer; font-size: 18px;" >
+            다음 페이지
+        </button>
+        </div>
+    </main>
+    <footer>
+        <p>14</p>
+    </footer>
+
+    <script>
+        const goodfood = ["키위", "자두", "양배추", "현미", "오이","팥"];
+        
+        const badfood = ["커피", "빵", "삼겹살", "치킨"];
+        
+        goodfood.forEach(id => {
+            const imageElement = document.querySelector(`#${id} img`);
+            imageElement.addEventListener("click", function() {
+                imageElement.classList.toggle("highlight");
+            });
+        });
+        
+        badfood.forEach(id => {
+            const imageElement = document.querySelector(`#${id} img`);
+            imageElement.addEventListener("click", function() {
+                alert("다시 선택해주세요.");
+            });
+        });
+        document.getElementById("NextPage").addEventListener("click", function() {
+            location.assign("../page15/page15.html");
+        });
+    </script>
+</body>
+</html>
