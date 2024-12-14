@@ -1,0 +1,81 @@
+
+table {
+    width: 60%; 
+    margin: 20px auto;
+    text-align: center;
+    border: 1px solid #ccc;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #d8e6d8;
+    padding: 15px;
+    font-size: 18px;
+}
+
+td {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    vertical-align: middle; 
+}
+
+.main-body {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.title {
+    font-size: 22px;
+    margin-bottom: 10px;
+    position: relative;
+    left: -38%; 
+    color: #030303;
+    background-color: #b4eccb;
+}
+
+.subtitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.highlight {
+    font-size: 24px;
+    color: #f70e0e;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.food-image {
+    width: 90%; 
+    max-width: 300px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+}
+.answer {
+    width: 90%;
+    padding: 10px; 
+    font-size: 18px; 
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+}
+
+.under-text {
+    font-size: 20px;
+    color: #f70e0e;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.under-text2 { 
+    font-size:20px;
+    margin-bottom: 15px;
+    text-align: center;
+}
