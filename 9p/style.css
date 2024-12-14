@@ -1,0 +1,88 @@
+body {
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-body {
+    width: 95%;
+    max-width: 800px;
+    background: #fff;
+    padding: 20px;
+
+}
+
+.circle {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+    margin-top: 20px; 
+}
+
+.sixfood {
+    font-size: 18px;
+    margin-bottom: 10px;
+    background-color: #eaf4e2;
+    display: block;
+    border-radius: 5px;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+}
+
+.color {
+    font-size: 20px;
+    color:red; 
+}
+.color2 {
+    font-size:20px;
+    color:black;
+    
+}
+
+.date input {
+    margin-right: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 400px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.category-food input {
+    width: 90%;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+.foodsizeup { 
+    font-size: 20px;
+}
+
+button.active {
+    background-color: #00ff51;
+}
+
+input.correct {
+    border-color: #01ff1b; 
+    box-shadow: 0 0 10px #01ff1b;
+}
+
+input.incorrect {
+    border-color: #ff0000; 
+    box-shadow: 0 0 10px #ff0000;
+}

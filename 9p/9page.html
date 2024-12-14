@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>변비에 좋은 식품</title>
+</head>
+
+<body>
+    <div class="main-body">
+        <div class="date">
+            <span class= "circle">🌱오늘의 날짜를 적고, 날씨를 선택하세요.</span><br>
+            <input id="date" clatype="text" placeholder="YYYY MM DD 요일">
+
+
+            <select id="weather">
+                <option value="맑음">☀️</option>
+                <option value="흐림">☁️</option>
+                <option value="비">🌧️</option>
+                <option value="눈">☃️</option>
+                </select>
+        </div>
+        <div>
+            <button onclick="saveData()">저장하기</button>
+            <button onclick="loadData()">불러오기</button>
+        </div>
+
+        <div class="food-img">
+            <div class = "sixfood">🌱변비에 좋은 식품 기억하기</div>
+            <span class = "color">다음은 변비에 좋은 식품 </span><span class = "color2">6가지입니다. 소리 내어 읽어보세요.</span>
+            <table>
+                <tr>
+                    <th>팥</th>
+                    <th>현미</th>
+                </tr>
+                <tr>
+                    <td><img src="팥.PNG" alt="팥"></td>
+                    <td><img src="현미.PNG" alt="현미"></td>
+                </tr>
+                <tr>
+                    <th>양배추</th>
+                    <th>오이</th>
+                </tr>
+                <tr>
+                    <td><img src="양배추.PNG" alt="양배추"></td>
+                    <td><img src="오이.PNG" alt="오이"></td>
+                </tr>
+                <tr>
+                    <th>자두</th>
+                    <th>키위</th>
+                </tr>
+                <tr>
+                    <td><img src="자두.PNG" alt="자두"></td>
+                    <td><img src="키위.PNG" alt="키위"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="category-food">
+            <p class="foodsizeup">1.다음 식품을 기억하기 쉽게 3가지 분류로 나눠보세요.</p>
+            <table>
+                <tr>
+                    <th>곡물</th>
+                    <th>채소</th>
+                    <th>과일</th>
+                </tr>
+                <tr>
+                    <td><input id="answer1" type="text" placeholder="(곡물), (곡물)"></td>
+                    <td><input id="answer2" type="text" placeholder="(채소), (채소)"></td>
+                    <td><input id="answer3" type="text" placeholder="(과일), (과일)"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    
+    <button id = "NextPage" style=" margin-top: 960px;padding: 10px ; background-color: #4CAF50; color: white; border: none; cursor: pointer; " >
+        다음 페이지
+    </button>
+    <script src="main.js"></script>
+</body>
+
+</html>
