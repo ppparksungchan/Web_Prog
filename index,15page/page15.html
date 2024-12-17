@@ -89,23 +89,23 @@
    
 
     <script>
-       // 저장하기 함수
+       
 function saveData() {
     const enteredDate = document.querySelector('#date').value;
     const enteredWeather = document.querySelector('#weather').value;
 
-            // 다른 웹에서 저장된 날짜와 날씨 가져오기
+          
     const savedDate = localStorage.getItem('date');
     const savedWeather = localStorage.getItem('weather');
 
-            // 날짜와 날씨 비교
+          
     if (savedDate && savedWeather) {
         if (enteredDate !== savedDate || enteredWeather !== savedWeather) {
             alert('날짜와 시간이 일치하지 않습니다!');
-            return; // 저장을 중단하고 함수 종료
+            return; 
         }
     }
-    // querySelector를 사용해 각 필드의 값을 localStorage에 저장    setItem() - key, value 추가
+  
     localStorage.setItem('date', document.querySelector('#date').value);
     localStorage.setItem('weather', document.querySelector('#weather').value);
     localStorage.setItem('visitedPlace', document.querySelector('#visitedPlace').value);
@@ -118,9 +118,9 @@ function saveData() {
     alert('일기가 저장되었습니다!');
 }
 
-// 불러오기 함수
+
 function loadData() {
-    // querySelector를 사용해 각 필드에 저장된 값을 불러오기    getItem() - value 읽어 오기
+    
     document.querySelector('#date').value = localStorage.getItem('date') || '';
     document.querySelector('#weather').value = localStorage.getItem('weather') || '맑음';
     document.querySelector('#visitedPlace').value = localStorage.getItem('visitedPlace') || '';
